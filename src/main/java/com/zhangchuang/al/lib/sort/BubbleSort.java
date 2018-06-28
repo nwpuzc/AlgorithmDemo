@@ -1,5 +1,9 @@
 package com.zhangchuang.al.lib.sort;
 
+/**
+ * 冒泡排序
+ *
+ */
 public class BubbleSort
 {
     public static int[] bubbleSort(int[] arr)
@@ -9,15 +13,24 @@ public class BubbleSort
     		return arr;
     	}
     	
-    	for (int i = 0; i < arr.length; i++)
+    	boolean flag = true;
+    	
+    	for (int i = 0; i < arr.length && flag; i++)
     	{
-    		for (int j = 1; j < arr.length - i; j++)
+    		/**
+    		 * If there is no exchange occured in traversal beforem, no need to traverse again
+    		 * the list is in order. 
+    		 */
+    		flag = false;
+    		
+    		for (int j = 0; j < arr.length - i - 1; j++)
     		{
-    			if (arr[j - 1] > arr[j])
+    			if (arr[j] > arr[j + 1])
     			{
     				int temp = arr[j];
-    				arr[j] = arr[j - 1];
-    				arr[j - 1] = temp;
+    				arr[j] = arr[j + 1];
+    				arr[j + 1] = temp;
+    				flag = true;
     			}
     		}
     	}

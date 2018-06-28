@@ -3,6 +3,7 @@ package com.zhangchuang.al.base;
 import com.zhangchuang.al.lib.search.BinarySearchLoop;
 import com.zhangchuang.al.lib.search.BinarySearchRecursion;
 import com.zhangchuang.al.lib.sort.BubbleSort;
+import com.zhangchuang.al.lib.sort.SelectionSort;
 
 /**
  * Hello world!
@@ -14,15 +15,25 @@ public class App
 	
     public static void main( String[] args )
     {
-    	int[] arrRes = BubbleSort.bubbleSort(arr1);
+    	System.out.println("Raw array: " + CommonUtils.pringArray(arr1));
     	
-    	System.out.println("Sorted array:");
-        System.out.println(CommonUtils.pringArray(arrRes));
+    	int[] arrResBu = BubbleSort.bubbleSort(arr1);
+    	
+    	System.out.println("Find is 9 exist By BinarySearchRecursion: " + BinarySearchRecursion.binarySearch(arrResBu, 9, 0, arrResBu.length - 1));
+        System.out.println("Find is 90 exist By BinarySearchRecursion: " + BinarySearchRecursion.binarySearch(arrResBu, 90, 0, arrResBu.length - 1));
         
-        System.out.println("Find is 9 exist By BinarySearchRecursion: " + BinarySearchRecursion.binarySearch(arrRes, 9, 0, arrRes.length - 1));
-        System.out.println("Find is 90 exist By BinarySearchRecursion: " + BinarySearchRecursion.binarySearch(arrRes, 90, 0, arrRes.length - 1));
+        System.out.println("Find is 1 exist By BinarySearchLoop: " + BinarySearchLoop.binarySearch(arrResBu, 1));
+        System.out.println("Find is 15 exist By BinarySearchLoop: " + BinarySearchLoop.binarySearch(arrResBu, 15));
+    	
+    	System.out.print("Sorted array By BubbleSort:");
+        System.out.println(CommonUtils.pringArray(arrResBu));
         
-        System.out.println("Find is 1 exist By BinarySearchLoop: " + BinarySearchLoop.binarySearch(arrRes, 1));
-        System.out.println("Find is 15 exist By BinarySearchLoop: " + BinarySearchLoop.binarySearch(arrRes, 15));
+        int[] arrResSel = SelectionSort.slectionSort(arr1);
+        
+        System.out.print("Sorted array By SelectionSort");
+        System.out.println(CommonUtils.pringArray(arrResSel));
+        
+        
+        
     }
 }
