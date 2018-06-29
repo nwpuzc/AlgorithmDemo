@@ -3,7 +3,9 @@ package com.zhangchuang.al.base;
 import com.zhangchuang.al.lib.search.BinarySearchLoop;
 import com.zhangchuang.al.lib.search.BinarySearchRecursion;
 import com.zhangchuang.al.lib.sort.BubbleSort;
+import com.zhangchuang.al.lib.sort.InsertSort;
 import com.zhangchuang.al.lib.sort.SelectionSort;
+import com.zhangchuang.al.lib.sort.ShellSort;
 
 /**
  * Hello world!
@@ -11,7 +13,7 @@ import com.zhangchuang.al.lib.sort.SelectionSort;
  */
 public class App 
 {
-	private static final int[] arr1 = new int[] {5, 3, 1, 7, 9, 2, 11, 10, 13};
+    private static final int[] arr1 = new int[] {5, 3, 1, 7, 9, 2, 11, 10, 13};
 	
     public static void main( String[] args )
     {
@@ -30,10 +32,17 @@ public class App
         
         int[] arrResSel = SelectionSort.slectionSort(arr1);
         
-        System.out.print("Sorted array By SelectionSort");
+        System.out.print("Sorted array By SelectionSort:");
         System.out.println(CommonUtils.pringArray(arrResSel));
         
+        int[] arrResInsert = InsertSort.insertSort(arr1);
         
+        System.out.print("Sorted array By InsertSort:");
+        System.out.println(CommonUtils.pringArray(arrResInsert));
         
+        int[] arrResShell = ShellSort.shellSort(arr1);
+        
+        System.out.print("Sorted array By ShellSort:");
+        System.out.println(CommonUtils.pringArray(arrResShell));
     }
 }
