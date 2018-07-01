@@ -1,5 +1,9 @@
 package com.zhangchuang.al.base;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.time.DateFormatUtils;
+
 import com.zhangchuang.al.lib.search.BinarySearchLoop;
 import com.zhangchuang.al.lib.search.BinarySearchRecursion;
 import com.zhangchuang.al.lib.sort.BubbleSort;
@@ -50,5 +54,7 @@ public class App
 
         System.out.print("Sorted array By ShellSort:");
         System.out.println(CommonUtils.pringArray(arrResShell));
+        
+        System.out.println("\nRecord time: " + DateFormatUtils.format(new Date(), "yyyy/MM/dd HH:mm:ss"));  
     }
 }
