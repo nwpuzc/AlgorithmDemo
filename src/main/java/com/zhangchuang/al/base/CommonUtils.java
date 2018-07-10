@@ -1,5 +1,7 @@
 package com.zhangchuang.al.base;
 
+import java.util.Arrays;
+
 public class CommonUtils
 {
     public static String pringArray(int[] arr)
@@ -22,5 +24,17 @@ public class CommonUtils
         sb.append("]");
 
         return sb.toString();
+    }
+    
+    public static int[] cloneArray(int[] arr)
+    {
+        int[] newArr = new int[arr.length];
+        
+        for (int i = 0; i < arr.length; i++)
+        {
+            newArr[i] = arr[i];
+        }
+        
+        return newArr;
     }
 }
