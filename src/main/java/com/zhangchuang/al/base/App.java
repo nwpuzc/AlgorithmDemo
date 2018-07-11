@@ -7,7 +7,9 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 import com.zhangchuang.al.lib.search.BinarySearchLoop;
 import com.zhangchuang.al.lib.search.BinarySearchRecursion;
 import com.zhangchuang.al.lib.sort.BubbleSort;
+import com.zhangchuang.al.lib.sort.HeapSort;
 import com.zhangchuang.al.lib.sort.InsertSort;
+import com.zhangchuang.al.lib.sort.MergeSort;
 import com.zhangchuang.al.lib.sort.QuickSort;
 import com.zhangchuang.al.lib.sort.SelectionSort;
 import com.zhangchuang.al.lib.sort.ShellSort;
@@ -24,7 +26,7 @@ public class App
     {
         System.out.println("Raw array: " + CommonUtils.pringArray(arr1));
 
-        int[] arrResBu = BubbleSort.bubbleSort(arr1);
+        int[] arrResBu = BubbleSort.bubbleSort(CommonUtils.cloneArray(arr1));
 
         System.out.println(
                 "Find is 9 exist By BinarySearchRecursion: "
@@ -41,26 +43,35 @@ public class App
         System.out.print("Sorted array By BubbleSort:");
         System.out.println(CommonUtils.pringArray(arrResBu));
 
-        int[] arrResSel = SelectionSort.slectionSort(arr1);
+        int[] arrResSel = SelectionSort.slectionSort(CommonUtils.cloneArray(arr1));
 
         System.out.print("Sorted array By SelectionSort:");
         System.out.println(CommonUtils.pringArray(arrResSel));
 
-        int[] arrResInsert = InsertSort.insertSort(arr1);
+        int[] arrResInsert = InsertSort.insertSort(CommonUtils.cloneArray(arr1));
 
         System.out.print("Sorted array By InsertSort:");
         System.out.println(CommonUtils.pringArray(arrResInsert));
 
-        int[] arrResShell = ShellSort.shellSort(arr1);
+        int[] arrResShell = ShellSort.shellSort(CommonUtils.cloneArray(arr1));
 
         System.out.print("Sorted array By ShellSort:");
         System.out.println(CommonUtils.pringArray(arrResShell));
         
-        int[] arrResQuick = QuickSort.quickSort(arr1);
+        int[] arrResQuick = QuickSort.quickSort(CommonUtils.cloneArray(arr1));
         
         System.out.print("Sorted array By QuickSort:");
         System.out.println(CommonUtils.pringArray(arrResQuick));
         
+        int[] arrResHeap = HeapSort.heapSort(CommonUtils.cloneArray(arr1));
+        
+        System.out.print("Sorted array By HeapSort:");
+        System.out.println(CommonUtils.pringArray(arrResHeap));
+        
+        int[] arrResMerge = MergeSort.mergeSort(CommonUtils.cloneArray(arr1));
+        
+        System.out.print("Sorted array By MergeSort:");
+        System.out.println(CommonUtils.pringArray(arrResMerge));
         
         System.out.println("\nRecord time: " + DateFormatUtils.format(new Date(), "yyyy/MM/dd HH:mm:ss"));  
     }
