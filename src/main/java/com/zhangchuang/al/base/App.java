@@ -9,6 +9,7 @@ import com.zhangchuang.al.lib.search.BinarySearchRecursion;
 import com.zhangchuang.al.lib.sort.BubbleSort;
 import com.zhangchuang.al.lib.sort.HeapSort;
 import com.zhangchuang.al.lib.sort.InsertSort;
+import com.zhangchuang.al.lib.sort.MergeSort;
 import com.zhangchuang.al.lib.sort.QuickSort;
 import com.zhangchuang.al.lib.sort.SelectionSort;
 import com.zhangchuang.al.lib.sort.ShellSort;
@@ -66,6 +67,11 @@ public class App
         
         System.out.print("Sorted array By HeapSort:");
         System.out.println(CommonUtils.pringArray(arrResHeap));
+        
+        int[] arrResMerge = MergeSort.mergeSort(CommonUtils.cloneArray(arr1));
+        
+        System.out.print("Sorted array By MergeSort:");
+        System.out.println(CommonUtils.pringArray(arrResMerge));
         
         System.out.println("\nRecord time: " + DateFormatUtils.format(new Date(), "yyyy/MM/dd HH:mm:ss"));  
     }
